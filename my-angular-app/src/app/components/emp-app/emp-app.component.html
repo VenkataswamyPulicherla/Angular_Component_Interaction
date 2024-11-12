@@ -1,0 +1,17 @@
+<div class="container m-0 mt-3">
+    <div class="row">
+        <div class="col">
+            <p class="h4">Employee's Details</p>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus iusto suscipit facere velit excepturi numquam in explicabo nam iste facilis quae recusandae totam quas, maxime quam libero cum, omnis ea.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-1" [ngClass]="{'col-md-8': editEmployee && !closeEmpForm, 'col-md-12': !editEmployee || closeEmpForm}">
+            <app-emp-list (sendEmployee)="editEmployee=$event"></app-emp-list>
+        </div>
+        <div class="col-md-4" *ngIf="editEmployee && !closeEmpForm">
+            <app-emp-card  [selectedEmployee]="editEmployee" (closeFormEvent)="closeForm()"></app-emp-card>
+        </div>
+    </div>
+
+</div>
